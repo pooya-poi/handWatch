@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #091921;
+}
+
+.clock {
+  background-color: #091921 !important;
+  z-index: 9999;
+  position: relative;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("./clockface.png");
+  background-size: cover;
+  border: 4px solid #091921;
+  border-radius: 50%;
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+    inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.3),
+    inset 0px 15px 15px rgba(0, 0, 0, 0.3);
+}
+
+.clock:before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 9999;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+  position: absolute;
+}
+
+.clock .hour,
+.hr {
+  width: 150px;
+  height: 150px;
+}
+.clock .min,
+.mn {
+  width: 200px;
+  height: 200px;
+}
+.clock .sec,
+.sc {
+  width: 250px;
+  height: 250px;
+}
+
+.hr,
+.mn,
+.sc {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hr:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background-color: #ed4555;
+  z-index: 10;
+  border-radius: 5px 5px 0 0;
+}
+.mn:before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 100px;
+  background-color: #fff;
+  z-index: 10;
+  border-radius: 5px 5px 0 0;
+}
+.sc:before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 150px;
+  /* background-color:#fff; */
+  background-color: #0c62a8;
+  z-index: 10;
+  border-radius: 5px 5px 0 0;
+}
+
+.digital {
+  font-weight: lighter;
+  font-size: 20px;
+  position: absolute;
+  top: 80%;
+  color: #fff;
+  font-family: "Orbitron";
+}
+/* .day{
+	background-color: #fff;
+	
+} */
+
+.date {
+  /* justify-content: center; */
+  /* align-items: center;
+	justify-items: center; */
+  /* display: flex; */
+  /* justify-content: space-between; */
+  text-align: center;
+  font-family: "Orbitron";
+  color: #fff;
+  margin: 55px;
+  position: absolute;
+  right: 0;
+}
+.month {
+  background: #117ed6;
+  margin: 5px 2px;
+  padding: 1px 5px;
+  box-shadow: inset 3px 2px 2px rgba(0, 0, 0, 0.7),
+    inset 5px -2px 4px rgba(0, 0, 0, 0.3), inset 7px -3px 3px rgba(0, 0, 0, 0.3),
+    inset 4px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.topHand {
+  /* background: rgb(35, 240, 137); */
+  background: #624a2e;
+  width: 200px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
+.topHand::before {
+  content: "";
+  width: 200px;
+  height: 500px;
+  /* background: azure; */
+  position: absolute;
+  border-left: 5px dotted #091921;
+  border-right: 5px dotted aliceblue;
+  margin: -22px 85px;
+  border-left-width: 20px;
+}
+.topHand::after {
+  content: "";
+  width: 200px;
+  height: 500px;
+  /* background: azure; */
+  position: absolute;
+  border-left: 5px dotted #091921;
+  border-right: 5px dotted aliceblue;
+  margin: -22px 80px;
+  border-left-width: 20px;
+}
+
+.topHand .border {
+  width: 170px;
+  height: 400px;
+  position: absolute;
+  margin: 0px 15px;
+  border-left: 5px black dashed;
+  border-right: 5px black dashed;
+}
+
+.bottomHand {
+  /* background: rgb(35, 240, 137); */
+  background: #624a2e;
+  width: 200px;
+  height: 500px;
+  position: absolute;
+  bottom: 0;
+}
+
+/* ************************************** */
+.bottomHand::before {
+  content: "";
+  width: 200px;
+  height: 500px;
+  /* background: azure; */
+  position: absolute;
+  border-left: 5px dotted #091921;
+  /* border-right: 5px dotted aliceblue; */
+  margin: -22px 85px;
+  border-left-width: 20px;
+}
+.bottomHand::after {
+  content: "";
+  width: 200px;
+  height: 500px;
+  /* background: azure; */
+  position: absolute;
+  border-left: 5px dotted #091921;
+  /* border-right: 5px dotted aliceblue; */
+  margin: -22px 80px;
+  border-left-width: 20px;
+}
+
+.bottomHand .border {
+  width: 170px;
+  height: 500px;
+  position: absolute;
+  margin: 0px 15px;
+  border-left: 5px black dashed;
+  border-right: 5px black dashed;
+}
+
+.screw {
+  width: 20px;
+  height: 40px;
+  border-radius: 0px 5px 5px 0px;
+  background-color: rgb(68, 68, 68);
+  margin: -2px;
+}
+.screw span {
+  position: absolute;
+  background-color: black;
+  width: 20px;
+  height: 1px;
+}
+
+.screw span:nth-child(1) {
+  margin-top: 7px;
+}
+.screw span:nth-child(2) {
+  margin-top: 12px;
+}
+.screw span:nth-child(3) {
+  margin-top: 17px;
+}
+.screw span:nth-child(4) {
+  margin-top: 22px;
+}
+.screw span:nth-child(5) {
+  margin-top: 27px;
+}
+.screw span:nth-child(6) {
+  margin-top: 32px;
+}
